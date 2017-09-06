@@ -1,23 +1,27 @@
 import React from "react";
+import { connect } from "react-redux";
 import "../style/components/DeleteItem.scss";
 
-class CartItem extends React.Component {
+import { removeItem } from "../actions/removeItem";
+
+class DeleteItem extends React.Component {
 	constructor(props) {
 		super(props);
-		this.deleteItem = this.deleteItem.bind(this);
+		this.delItem = this.delItem.bind(this);
 	}
 
-	deleteItem() {
-		debugger;
+	delItem() {
+		const item = this.props.index;
+		this.props.dispatch(removeItem(item));
 	}
 
 	render() {
 		return (
 			<div>
-				<a className="del-btn" onClick={this.deleteItem} />
+				<a className="del-btn" onClick={this.delItem} />
 			</div>
 		);
 	}
 }
 
-export default CartItem;
+export default connect()(DeleteItem);

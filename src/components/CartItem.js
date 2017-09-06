@@ -1,4 +1,5 @@
 import React from "react";
+import { connect } from "react-redux";
 import "../style/components/CartItem.scss";
 import DeleteItem from "../components/DeleteItem";
 
@@ -7,7 +8,7 @@ class CartItem extends React.Component {
         super(props);
     }
     render() {
-        const items = this.props.data.items;
+        const items = this.props.items;
         return (
             <div>
                 <div className="row">
@@ -31,10 +32,7 @@ class CartItem extends React.Component {
                                             <p>{item.subtitle}</p>
                                         </div>
                                         <div className="cart-item-right-part">
-                                            <DeleteItem
-                                                index={index}
-                                                data={this.props.data.items}
-                                            />
+                                            <DeleteItem index={index} />
                                         </div>
                                     </div>
                                 );

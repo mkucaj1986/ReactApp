@@ -17,18 +17,18 @@ class App extends React.Component {
 		this.props.getData();
 	}
 	render() {
-		let data = null;
+		let dataDom = null;
 		if (this.isLoading) {
-			data = <div>Loading...</div>;
+			dataDom = <div>Loading...</div>;
 		}
 		if (this.props.dataLoaded) {
-			data = <CartItem data={this.props.data} />;
+			dataDom = <CartItem items={this.props.items} />;
 			this.isLoading = false;
 		}
 		return (
 			<div className="container">
 				<h1>7 Ninja React App</h1>
-				{data}
+				{dataDom}
 			</div>
 		);
 	}
@@ -37,6 +37,7 @@ class App extends React.Component {
 const mapStateToProps = state => {
 	return {
 		data: state.getData.data,
+		items: state.getData.items,
 		dataLoaded: state.getData.dataLoaded
 	};
 };
