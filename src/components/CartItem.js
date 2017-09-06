@@ -31,7 +31,10 @@ class CartItem extends React.Component {
                                             <p>{item.subtitle}</p>
                                         </div>
                                         <div className="cart-item-right-part">
-                                            <DeleteItem />
+                                            <DeleteItem
+                                                index={index}
+                                                data={this.props.data.items}
+                                            />
                                         </div>
                                     </div>
                                 );

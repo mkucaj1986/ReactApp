@@ -1,47 +1,19 @@
-$main-color: #000;
-
-h1 {
-	color: $main-color;
-	text-align: center;
+@mixin btnTransition($duration) {
+	-webkit-transition: all $duration;
+	-moz-transition: all $duration;
+	-ms-transition: all $duration;
+	-o-transition: all $duration;
+	transition: all $duration;
 }
 
-.cart-Item {
-	display: inline-block;
-	width: 100%;
-
-	.cart-item-container {
-		display: flex;
-		flex-wrap: wrap;
-
-		.cart-item-el-list {
-			display: flex;
-			padding: 15px 0;
-			width: 100%;
-		}
-		.cart-item-img {
-			width: 20%;
-			display: block;
-			img {
-				box-shadow: 3px 3px 1px #ccc;
-				-webkit-box-shadow: 3px 3px 1px #ccc;
-				-moz-box-shadow: 3px 3px 1px #ccc;
-			}
-			&:hover {
-				opacity: 0.8;
-			}
-		}
-		.cart-item-center-text {
-			display: block;
-			padding: 15px;
-			width: 40%;
-		}
-		.cart-item-right-part {
-			display: block;
-			width: 40%;
-		}
+.del-btn {
+	background: #fff url("../../img/imgdelete_btn.png") no-repeat center;
+	background-size: 70%;
+	display: block;
+	width: 55px;
+	height: 67px;
+	@include btnTransition(.35s);
+	&:hover {
+		opacity: 0.8;
 	}
-}
-.img-fluid {
-	max-width: 100%;
-	height: auto;
 }

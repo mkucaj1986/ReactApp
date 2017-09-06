@@ -58,6 +58,10 @@ const config = port => ({
             loader: "sass-loader"
           }
         ]
+      },
+      {
+        test: /\.(png|jpg|gif)$/,
+        loader: "file-loader"
       }
     ]
   }

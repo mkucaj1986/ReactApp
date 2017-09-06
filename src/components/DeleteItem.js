@@ -1,4 +1,5 @@
 import React from "react";
+import "../style/components/DeleteItem.scss";
 
 class CartItem extends React.Component {
 	constructor(props) {
@@ -13,7 +14,7 @@ class CartItem extends React.Component {
 	render() {
 		return (
 			<div>
-				<button className="del-btn" onClick={this.deleteItem} />
+				<a className="del-btn" onClick={this.deleteItem} />
 			</div>
 		);
 	}
