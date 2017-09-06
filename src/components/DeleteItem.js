@@ -17,7 +17,7 @@ class DeleteItem extends React.Component {
 
 	render() {
 		return (
-			<div>
+			<div className="cart-item-delete">
 				<a className="del-btn" onClick={this.delItem} />
 			</div>
 		);

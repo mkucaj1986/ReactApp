@@ -33,6 +33,9 @@ class CartItem extends React.Component {
                                         </div>
                                         <div className="cart-item-right-part">
                                             <DeleteItem index={index} />
+                                            <div className="cart-item-price">
+                                                {item.price + " " + "$"}
+                                            </div>
                                         </div>
                                     </div>
                                 );
