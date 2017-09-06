@@ -1,0 +1,8 @@
+dist/
+node_modules
+*.log
+*.js.map
+*.css.map
+coverage/
+.nyc_output
+.coveralls.yml
