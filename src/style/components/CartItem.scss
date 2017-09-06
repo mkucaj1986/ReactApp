@@ -14,8 +14,9 @@ h1 {
 		flex-wrap: wrap;
 
 		.cart-item-el-list {
+			border-bottom: 1px solid #ccc;
 			display: flex;
-			padding: 15px 0;
+			padding: 25px 0;
 			width: 100%;
 		}
 		.cart-item-img {
