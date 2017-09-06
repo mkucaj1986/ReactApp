@@ -1,6 +1,7 @@
 import React from "react";
 import { connect } from "react-redux";
 import CartItem from "../components/CartItem";
+import TotalPrice from "../components/TotalPrice";
 
 import { getData } from "../actions/getData";
 import "../style/index.scss";
@@ -52,6 +53,7 @@ class App extends React.Component {
 			<div className="container">
 				<h1>7 Ninja React App</h1>
 				{dataDom}
+				<TotalPrice totalPrice={this.props.totalPrice} />
 				{noItems}
 			</div>
 		);
@@ -61,8 +63,10 @@ class App extends React.Component {
 const mapStateToProps = state => {
 	return {
 		data: state.getData.data,
+		dataLoaded: state.getData.dataLoaded,
 		items: state.getData.items,
-		dataLoaded: state.getData.dataLoaded
+		items: state.getData.items,
+		totalPrice: state.getData.totalPrice
 	};
 };
 

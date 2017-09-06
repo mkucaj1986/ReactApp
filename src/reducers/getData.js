@@ -2,6 +2,7 @@ const getData = (
     state = {
         data: [],
         items: [],
+        totalPrice: null,
         dataLoaded: false
     },
     action
@@ -12,6 +13,7 @@ const getData = (
                 ...state,
                 data: action.payload.data,
                 items: action.payload.data.items,
+                totalPrice: action.payload.data.cart.subtotal,
                 dataLoaded: true
             };
             break;
