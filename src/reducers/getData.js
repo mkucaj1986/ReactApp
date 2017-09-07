@@ -58,6 +58,22 @@ const getData = (
                 totalPrice: action.payload
             };
             break;
+        case "SELECT_SKU":
+            state = {
+                ...state,
+                items: [
+                    ...state.items.slice(0, action.payload.index),
+                    {
+                        ...state.items[action.payload.index],
+                        activesku: (state.items[
+                            action.payload.index
+                        ].activesku =
+                            action.payload.selectedSku)
+                    },
+                    ...state.items.slice(action.payload.index + 1)
+                ]
+            };
+            break;
         default:
             return { ...state };
     }

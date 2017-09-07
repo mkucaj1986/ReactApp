@@ -38,7 +38,10 @@ class CartItem extends React.Component {
                                         <div className="cart-item-center-text">
                                             <h2>{item.title}</h2>
                                             <p>{item.subtitle}</p>
-                                            <Select sku={item.sku} />
+                                            <Select
+                                                sku={item.sku}
+                                                index={index}
+                                            />
                                         </div>
                                         <div className="cart-item-right-part">
                                             <DeleteItem index={index} />

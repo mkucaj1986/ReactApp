@@ -1,5 +1,6 @@
 import React from "react";
 import { connect } from "react-redux";
+import { selectSku } from "../actions/selectSku";
 import "../style/components/Select.scss";
 
 class Select extends React.Component {
@@ -8,7 +9,9 @@ class Select extends React.Component {
         this.onChange = this.onChange.bind(this);
     }
     onChange = event => {
-        // DispatCh onChange action Select value eg ({ value: event.target.value });
+        const sku = event.target.value;
+        const index = this.props.index;
+        this.props.dispatch(selectSku(sku, index));
     };
     render() {
         const skus = this.props.sku[0];
