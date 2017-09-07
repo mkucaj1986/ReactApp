@@ -2,6 +2,7 @@ import React from "react";
 import { connect } from "react-redux";
 import CartItem from "../components/CartItem";
 import TotalPrice from "../components/TotalPrice";
+import LoadingSpinner from "../components/LoadingSpinner";
 
 import { getData } from "../actions/getData";
 import "../style/index.scss";
@@ -22,25 +23,7 @@ class App extends React.Component {
 		let dataDom = null;
 		let noItems = null;
 		if (this.isLoading) {
-			dataDom = (
-				<div className="loading-spinner">
-					Loading...
-					<div className="sk-fading-circle">
-						<div className="sk-circle1 sk-circle" />
-						<div className="sk-circle2 sk-circle" />
-						<div className="sk-circle3 sk-circle" />
-						<div className="sk-circle4 sk-circle" />
-						<div className="sk-circle5 sk-circle" />
-						<div className="sk-circle6 sk-circle" />
-						<div className="sk-circle7 sk-circle" />
-						<div className="sk-circle8 sk-circle" />
-						<div className="sk-circle9 sk-circle" />
-						<div className="sk-circle10 sk-circle" />
-						<div className="sk-circle11 sk-circle" />
-						<div className="sk-circle12 sk-circle" />
-					</div>
-				</div>
-			);
+			dataDom = <LoadingSpinner />;
 		}
 		if (this.props.dataLoaded) {
 			dataDom = <CartItem items={this.props.items} />;
