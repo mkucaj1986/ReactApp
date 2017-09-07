@@ -1,6 +1,7 @@
 import React from "react";
 import { connect } from "react-redux";
 import { decrement } from "../actions/decrement";
+import { getTotalPrice } from "../actions/getTotalPrice";
 
 class DecrementQty extends React.Component {
     constructor(props) {
@@ -12,13 +13,21 @@ class DecrementQty extends React.Component {
         const item = this.props.index;
         this.props.dispatch(decrement(item));
     }
-
+    componentDidUpdate() {
+        const items = this.props.items;
+        this.props.dispatch(getTotalPrice(items));
+    }
     render() {
         return (
             <div className="increase-ctrl">
-                <div className="decrease-btn" onClick={this.decrementQtyFn}>
+                <button
+                    className="qty-ctrl-btn"
+                    type="button"
+                    disabled={this.props.items[this.props.index].qty === 1}
+                    onClick={this.decrementQtyFn}
+                >
                     -
-                </div>
+                </button>
             </div>
         );
     }

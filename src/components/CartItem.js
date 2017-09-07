@@ -4,10 +4,15 @@ import "../style/components/CartItem.scss";
 import DeleteItem from "../components/DeleteItem";
 import Increase from "../components/Increase";
 import Decrement from "../components/Decrement";
+import { getTotalPrice } from "../actions/getTotalPrice";
 
 class CartItem extends React.Component {
     constructor(props) {
         super(props);
+    }
+    componentDidUpdate() {
+        const items = this.props.items;
+        this.props.dispatch(getTotalPrice(items));
     }
     render() {
         const items = this.props.items;
@@ -40,6 +45,7 @@ class CartItem extends React.Component {
                                                     <div className="cart-iem-qty-controls-part cart-item-decrease">
                                                         <Decrement
                                                             index={index}
+                                                            items={items}
                                                         />
                                                     </div>
                                                     <div className="cart-iem-qty-controls-part-center cart-item-qty">
@@ -48,6 +54,7 @@ class CartItem extends React.Component {
                                                     <div className="cart-iem-qty-controls-part cart-item-increase">
                                                         <Increase
                                                             index={index}
+                                                            items={items}
                                                         />
                                                     </div>
                                                 </div>
@@ -69,4 +76,4 @@ class CartItem extends React.Component {
     }
 }
 
-export default CartItem;
+export default connect()(CartItem);

@@ -52,6 +52,12 @@ const getData = (
                 ]
             };
             break;
+        case "GET_TOTAL_PRICE":
+            state = {
+                ...state,
+                totalPrice: action.payload
+            };
+            break;
         default:
             return { ...state };
     }

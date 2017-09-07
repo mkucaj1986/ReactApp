@@ -6,6 +6,9 @@ $spinkit-spinner-color: #333 !default;
 	width: 1280px;
 	display: block;
 	margin: 0 auto;
+	@media only screen and (max-width: 1279px) {
+		width: 100%;
+	}
 }
 
 .no-items {

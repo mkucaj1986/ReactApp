@@ -25,10 +25,16 @@ h1 {
 			display: flex;
 			padding: 25px 0;
 			width: 100%;
+			@media only screen and (max-width: 767px) {
+				display: block;
+			}
 		}
 		.cart-item-img {
 			width: 20%;
 			display: block;
+			@media only screen and (max-width: 767px) {
+				width: 100%;
+			}
 			img {
 				box-shadow: 3px 3px 1px #ccc;
 				-webkit-box-shadow: 3px 3px 1px #ccc;
@@ -42,6 +48,12 @@ h1 {
 			display: block;
 			padding: 15px;
 			width: 60%;
+			@media only screen and (max-width: 767px) {
+				width: 100%;
+			}
+			@media only screen and (max-width: 767px) {
+				padding: 0 10px;
+			}
 			p {
 				color: #9f9f9f;
 			}
@@ -50,7 +62,9 @@ h1 {
 			display: block;
 			position: relative;
 			width: 20%;
-
+			@media only screen and (max-width: 767px) {
+				width: 100%;
+			}
 			.cart-item-delete {
 				position: absolute;
 				right: 0;
@@ -60,25 +74,24 @@ h1 {
 				width: 100%;
 				display: flex;
 				justify-content: space-between;
+				@media only screen and (max-width: 767px) {
+					padding: 80px 0 0 0;
+				}
 				.cart-iem-qty-controls {
 					font-size: 24px;
 					color: #9f9f9f;
 					display: flex;
 					justify-content: space-between;
 					width: 50%;
+					@media only screen and (max-width: 767px) {
+						width: 35%;
+						max-width: 100px;
+					}
 					.cart-iem-qty-controls-part {
-						.increase-btn {
+						.qty-ctrl-btn {
 							@include btnTransition(.35s);
 							border: 1px solid #dcdcdc;
-							cursor: pointer;
-							padding: 5px 10px;
-							&:hover {
-								opacity: 0.8;
-							}
-						}
-						.decrease-btn {
-							@include btnTransition(.35s);
-							border: 1px solid #dcdcdc;
+							background: none;
 							cursor: pointer;
 							padding: 5px 10px;
 							&:hover {
