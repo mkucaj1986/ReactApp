@@ -1,4 +1,11 @@
 $main-color: #000;
+@mixin btnTransition($duration) {
+	-webkit-transition: all $duration;
+	-moz-transition: all $duration;
+	-ms-transition: all $duration;
+	-o-transition: all $duration;
+	transition: all $duration;
+}
 
 h1 {
 	color: $main-color;
@@ -34,22 +41,57 @@ h1 {
 		.cart-item-center-text {
 			display: block;
 			padding: 15px;
-			width: 40%;
+			width: 60%;
+			p {
+				color: #9f9f9f;
+			}
 		}
 		.cart-item-right-part {
 			display: block;
 			position: relative;
-			width: 40%;
+			width: 20%;
 
 			.cart-item-delete {
 				position: absolute;
 				right: 0;
 			}
-			.cart-item-price {
-				padding: 90px 0 0 0;
-				font-weight: 700;
-				text-align: right;
-				font-size: 22px;
+			.cart-item-price-box {
+				padding: 140px 0 0 0;
+				width: 100%;
+				display: flex;
+				justify-content: space-between;
+				.cart-iem-qty-controls {
+					font-size: 24px;
+					color: #9f9f9f;
+					display: flex;
+					justify-content: space-between;
+					width: 50%;
+					.cart-iem-qty-controls-part {
+						border: 1px solid #dcdcdc;
+						cursor: pointer;
+						padding: 5px 10px;
+						@include btnTransition(.35s);
+						&:hover {
+							opacity: 0.8;
+						}
+					}
+					.cart-iem-qty-controls-part-center {
+						border: 0;
+						cursor: default;
+						display: flex;
+						justify-content: center;
+						flex-direction: column;
+						text-align: center;
+						margin: 0 5px;
+						padding: 0;
+					}
+				}
+				.cart-item-price {
+					font-weight: 700;
+					text-align: right;
+					font-size: 22px;
+					width: 50%;
+				}
 			}
 		}
 	}

@@ -33,8 +33,21 @@ class CartItem extends React.Component {
                                         </div>
                                         <div className="cart-item-right-part">
                                             <DeleteItem index={index} />
-                                            <div className="cart-item-price">
-                                                {item.price + " " + "$"}
+                                            <div className="cart-item-price-box">
+                                                <div className="cart-iem-qty-controls">
+                                                    <div className="cart-iem-qty-controls-part cart-item-increase">
+                                                        -
+                                                    </div>
+                                                    <div className="cart-iem-qty-controls-part-center cart-item-qty">
+                                                        {item.qty}
+                                                    </div>
+                                                    <div className="cart-iem-qty-controls-part cart-item-decrease">
+                                                        +
+                                                    </div>
+                                                </div>
+                                                <div className="cart-item-price">
+                                                    {item.price + " " + "$"}
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
