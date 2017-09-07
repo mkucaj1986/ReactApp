@@ -26,6 +26,32 @@ const getData = (
                 ]
             };
             break;
+        case "INCREASE":
+            state = {
+                ...state,
+                items: [
+                    ...state.items.slice(0, action.payload),
+                    {
+                        ...state.items[action.payload],
+                        qty: state.items[action.payload].qty + 1
+                    },
+                    ...state.items.slice(action.payload + 1)
+                ]
+            };
+            break;
+        case "DECREMENT":
+            state = {
+                ...state,
+                items: [
+                    ...state.items.slice(0, action.payload),
+                    {
+                        ...state.items[action.payload],
+                        qty: state.items[action.payload].qty - 1
+                    },
+                    ...state.items.slice(action.payload + 1)
+                ]
+            };
+            break;
         default:
             return { ...state };
     }

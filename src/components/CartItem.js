@@ -2,6 +2,8 @@ import React from "react";
 import { connect } from "react-redux";
 import "../style/components/CartItem.scss";
 import DeleteItem from "../components/DeleteItem";
+import Increase from "../components/Increase";
+import Decrement from "../components/Decrement";
 
 class CartItem extends React.Component {
     constructor(props) {
@@ -35,18 +37,24 @@ class CartItem extends React.Component {
                                             <DeleteItem index={index} />
                                             <div className="cart-item-price-box">
                                                 <div className="cart-iem-qty-controls">
-                                                    <div className="cart-iem-qty-controls-part cart-item-increase">
-                                                        -
+                                                    <div className="cart-iem-qty-controls-part cart-item-decrease">
+                                                        <Decrement
+                                                            index={index}
+                                                        />
                                                     </div>
                                                     <div className="cart-iem-qty-controls-part-center cart-item-qty">
                                                         {item.qty}
                                                     </div>
-                                                    <div className="cart-iem-qty-controls-part cart-item-decrease">
-                                                        +
+                                                    <div className="cart-iem-qty-controls-part cart-item-increase">
+                                                        <Increase
+                                                            index={index}
+                                                        />
                                                     </div>
                                                 </div>
                                                 <div className="cart-item-price">
-                                                    {item.price + " " + "$"}
+                                                    {item.price * item.qty +
+                                                        " " +
+                                                        "$"}
                                                 </div>
                                             </div>
                                         </div>

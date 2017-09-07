@@ -67,12 +67,23 @@ h1 {
 					justify-content: space-between;
 					width: 50%;
 					.cart-iem-qty-controls-part {
-						border: 1px solid #dcdcdc;
-						cursor: pointer;
-						padding: 5px 10px;
-						@include btnTransition(.35s);
-						&:hover {
-							opacity: 0.8;
+						.increase-btn {
+							@include btnTransition(.35s);
+							border: 1px solid #dcdcdc;
+							cursor: pointer;
+							padding: 5px 10px;
+							&:hover {
+								opacity: 0.8;
+							}
+						}
+						.decrease-btn {
+							@include btnTransition(.35s);
+							border: 1px solid #dcdcdc;
+							cursor: pointer;
+							padding: 5px 10px;
+							&:hover {
+								opacity: 0.8;
+							}
 						}
 					}
 					.cart-iem-qty-controls-part-center {
