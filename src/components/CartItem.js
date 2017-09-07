@@ -4,6 +4,7 @@ import "../style/components/CartItem.scss";
 import DeleteItem from "../components/DeleteItem";
 import Increase from "../components/Increase";
 import Decrement from "../components/Decrement";
+import Select from "../components/Select";
 import { getTotalPrice } from "../actions/getTotalPrice";
 
 class CartItem extends React.Component {
@@ -37,6 +38,7 @@ class CartItem extends React.Component {
                                         <div className="cart-item-center-text">
                                             <h2>{item.title}</h2>
                                             <p>{item.subtitle}</p>
+                                            <Select sku={item.sku} />
                                         </div>
                                         <div className="cart-item-right-part">
                                             <DeleteItem index={index} />
